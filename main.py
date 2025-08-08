@@ -842,9 +842,7 @@ class TGBot:
             self.menu(message)
         else:
             if (response := self.get_setting('default_message')) is None:
-                self.bot.send_message(message.chat.id, _("I'm a bot that forwards messages, so please just tell me "
-                                                         "what you want to say.") + "\n" +
-                                      "Powered by [BetterForward](https://github.com/SideCloudGroup/BetterForward)",
+                self.bot.send_message(message.chat.id, _("有话直说"),
                                       parse_mode="Markdown",
                                       disable_web_page_preview=True)
             else:
@@ -1503,3 +1501,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         logger.info(_("Exiting..."))
         exit(0)
+
